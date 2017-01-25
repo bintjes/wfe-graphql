@@ -1,6 +1,6 @@
 # WFE api
 
-100 % based on my colluegue work to map another database model, this code is for my educational purpose and recreational ones (well not quite true on this one) .
+map database model, this code is for my educational purpose and recreational ones (well not quite true on this one) .
 
 
 
