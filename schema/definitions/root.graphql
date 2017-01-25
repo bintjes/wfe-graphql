@@ -1,0 +1,7 @@
+# Available graphql queries
+type WfeQuery {
+    # Get a r_workflow by id 
+    workflow(id: Int!):r_publishing_workflow
+    workflows:[r_publishing_workflow]
+
+}    

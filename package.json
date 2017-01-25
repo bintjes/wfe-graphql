@@ -1,0 +1,46 @@
+{
+  "name": "wfe-api",
+  "version": "1.0.0-beta.0",
+  "description": "wfe API",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "build": "sh ./bin/build.sh",
+    "postinstall": "sh ./git_hooks/install.sh",
+    "doc": "sh ./bin/doc.sh",
+    "dev": "while true; do node index.js --watch; done;",
+    "test": "node ./node_modules/jasmine/bin/jasmine.js",
+    "deploy": "sh ./bin/deploy.sh",
+    "mock": "while true; do node index.js --watch --mock; done;"
+  },
+  "author": "bintjes",
+  "license": "WTFPL",
+  "dependencies": {
+    "bluebird": "^3.4.6",
+    "boom": "^4.2.0",
+    "eslint": "^3.12.2",
+    "graphql": "^0.8.2",
+    "graphql-server-hapi": "^0.5.1",
+    "graphql-subscriptions": "^0.2.1",
+    "graphql-tools": "^0.9.1",
+    "hapi": "^16.0.2",
+    "inert": "^4.1.0",
+    "js-yaml": "^3.6.1",
+    "lazy.js": "^0.4.2",
+    "wfe-db": "https://github.com/bintjes/wfe-db.git",
+    "moment": "^2.16.0",
+    "mysql": "^2.12.0",
+    "sequelize": "^3.27.0",
+    "soap": "^0.18.0",
+    "soap-as-promised": "^1.16.0",
+    "winston": "^2.3.0",
+    "winston-daily-rotate-file": "^1.4.2"
+  },
+  "devDependencies": {
+    "babel-plugin-test-export": "^1.0.0-beta.0",
+    "babel-register": "^6.18.0",
+    "chokidar": "^1.6.1",
+    "commander": "^2.9.0",
+    "jasmine": "^2.5.3"
+  }
+}

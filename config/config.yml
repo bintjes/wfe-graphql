@@ -1,0 +1,32 @@
+api:
+    port: 4009
+    headers:
+        'Access-Control-Allow-Methods': POST
+        'Access-Control-Allow-Origin': '*'
+        'Access-Control-Max-Age': 86400
+        'Access-Control-Allow-Headers' : 'X-Requested-With,Content-Type'  
+log:
+    -
+        transport: Console
+        level: silly
+        colorize: true
+        silentEnvs: 
+            - production
+    -
+        transport: Rotate
+        colorize: false
+        level: info
+        json: false
+        silentEnvs: 
+            - development
+        filename: 'logs/wfe-api.log'
+        datePattern: 'yyyy-MM-dd.'
+        prepend: true
+database:
+    options:
+        host: '10.3.70.105'
+        port: 3306
+    user: 'devlpt'
+    password: 'Pm$l14->d3v'
+    dbname: 'wfe'
+    mandatory: false

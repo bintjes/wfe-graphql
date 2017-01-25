@@ -1,0 +1,30 @@
+api:
+    port: 4009
+    headers:
+        'Access-Control-Allow-Methods': POST
+        'Access-Control-Allow-Origin': '*'
+log:
+    -
+        transport: Console
+        level: silly
+        colorize: true
+        silentEnvs: 
+            - production
+    -
+        transport: Rotate
+        colorize: false
+        level: info
+        json: false
+        silentEnvs: 
+            - development
+        filename: 'logs/wfe-api.log'
+        datePattern: 'yyyy-MM-dd.'
+        prepend: true
+database:
+    options:
+        host: 'localhost'
+        port: 3306
+    user: ''
+    password: ''
+    dbname: ''
+    mandatory: false
