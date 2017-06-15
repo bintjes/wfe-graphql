@@ -2,13 +2,13 @@
   "name": "wfe-api",
   "version": "1.0.0-beta.0",
   "description": "wfe API",
-  "main": "index.js",
+  "main": "src/index.js",
   "scripts": {
-    "start": "node index.js",
+    "start": "pm2 start src/index.js --no-daemon",
     "build": "sh ./bin/build.sh",
     "postinstall": "sh ./git_hooks/install.sh",
     "doc": "sh ./bin/doc.sh",
-    "dev": "while true; do node index.js --watch; done;",
+    "dev": "pm2 start src/index.js --no-daemon --watch",
     "test": "node ./node_modules/jasmine/bin/jasmine.js",
     "deploy": "sh ./bin/deploy.sh",
     "mock": "while true; do node index.js --watch --mock; done;"

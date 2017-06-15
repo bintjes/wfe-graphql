@@ -1,6 +1,6 @@
 const Process = require('process')
 const Commander = require('commander')
-const { version } = require('./package.json')
+const { version } = require('./../package.json')
 
 global.Promise = require('bluebird')
 

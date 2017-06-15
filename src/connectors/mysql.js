@@ -1,4 +1,4 @@
-const { options, user, password, dbname } = require('../config/').database
+const { options, user, password, dbname } = require('../../config/').database
 const wfeDB = require('wfe-db')
 const { sql } = require('../utils/logger')
 

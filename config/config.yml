@@ -28,5 +28,5 @@ database:
         port: 3306
     user: 'devlpt'
     password: 'Pm$l14->d3v'
-    dbname: 'wfe'
+    dbname: 'wfe_4_dalet_graphql'
     mandatory: false

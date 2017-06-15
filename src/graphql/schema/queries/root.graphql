@@ -1,0 +1,9 @@
+# Available graphql queries
+type WfeQuery {
+    # Get a r_workflow by id 
+    workflow(id: Int!):Workflow
+    workflow:[Workflow]
+    language(id: Int!):Language
+    languages:[Language]
+
+}    

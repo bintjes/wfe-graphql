@@ -1,10 +1,6 @@
-type r_publishing_workflow{
+type Workflow{
     workflow_id: Int!
     publishing_id: Int
     name: String
     description: String
-
-
 }
-
-

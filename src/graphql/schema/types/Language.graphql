@@ -1,0 +1,12 @@
+type Language {
+    lng_iid: Int
+    alias: String
+    fullname: String
+    rtl: Boolean
+    collate_locale: String
+    lng_mixnews_iid: Int
+    lng_dalet: String
+    lng_iso: String
+    lng_dalet_long: String
+    dalet_station_id: Int
+}

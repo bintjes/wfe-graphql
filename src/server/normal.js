@@ -2,11 +2,11 @@ const Hapi = require('hapi')
 const Inert = require('inert')
 const GraphQLServer = require('graphql-server-hapi')
 
-const Config = require('../config')
+const Config = require('../../config')
 const SQL = require('../connectors/mysql')
 const Logger = require('../utils/logger')
 const Exit = require('../utils/exiter')
-const Schema = require('../schema')
+const Schema = require('../graphql/schema')
 
 const Server = new Hapi.Server()
 Server.connection({

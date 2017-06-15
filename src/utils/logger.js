@@ -2,7 +2,7 @@ const Process = require('process')
 const moment = require('moment')
 const Winston = require('winston')
 const Rotate = require('winston-daily-rotate-file')
-const { log } = require('../config/')
+const { log } = require('../../config/')
 
 const ENV = Process.env.NODE_ENV || 'development'
 
