@@ -1,0 +1,6 @@
+type WorkflowGroup{
+    id: Int!
+    name: String
+    description: String
+    workflows: [Workflow]
+}

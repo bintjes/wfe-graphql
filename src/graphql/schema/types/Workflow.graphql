@@ -1,6 +1,9 @@
 type Workflow{
-    workflow_id: Int!
-    publishing_id: Int
+    id: Int!
+    group_id: Int
     name: String
     description: String
+    workflowGroup: WorkflowGroup
+    workflowTasks: [WorkflowTask!]
+    WorkflowHn: [WorkflowHn!]
 }

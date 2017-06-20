@@ -1,0 +1,6 @@
+type Task{
+    id: Int!
+    default_service_url: String
+    name: String
+    description: String
+}

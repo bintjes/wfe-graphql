@@ -1,0 +1,8 @@
+type WorkflowTask{
+    id: Int!
+    service_url: String
+    workflow_id: Int
+    position: Int
+    task: Task
+    workflow: Workflow
+}

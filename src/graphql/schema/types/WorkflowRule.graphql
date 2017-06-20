@@ -1,0 +1,7 @@
+type WorkflowRule{
+    id: Int!
+    rule_type: String
+    order: Int
+    workflow_id: Int
+    rule: Rule
+}

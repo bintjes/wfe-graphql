@@ -1,0 +1,6 @@
+type WorkflowHn{
+    id: Int!
+    hn_type: String
+    label: Int
+    workflow_id: Int
+}

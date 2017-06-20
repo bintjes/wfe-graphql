@@ -1,8 +1,28 @@
 # Available graphql queries
 type WfeQuery {
-    # Get a r_workflow by id 
+    # Get  workflow(s)
     workflow(id: Int!):Workflow
-    workflow:[Workflow]
+    workflows:[Workflow]
+    # Get workflow groups)
+    workflowGroup(id: Int!):WorkflowGroup
+    workflowGroups:[WorkflowGroup]
+    # Get workflow task
+    workflowTask(id: Int!):WorkflowTask
+    workflowTasks:[WorkflowTask]
+    # Get workflow Hns
+    workflowHn(id: Int!):WorkflowHn
+    workflowHns: [WorkflowHn]
+    # Get workflow rules
+    workflowRule(id:Int):WorkflowRule
+    workflowRules:[WorkflowRule]
+    # Get generic tasks
+    task(id:Int):Task
+    tasks: [Task]
+    # Get generic rules
+    rule(id:Int): Rule
+    rules: [Rule]
+
+    #Get language(s)
     language(id: Int!):Language
     languages:[Language]
 
