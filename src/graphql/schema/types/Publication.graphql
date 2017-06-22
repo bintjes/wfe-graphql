@@ -1,0 +1,11 @@
+type Workflow{
+    id: Int!
+    group_id: Int
+    name: String
+    description: String
+    workflowGroup: WorkflowGroup
+    workflowTasks: [WorkflowTask!]
+    workflowHn: [WorkflowHn!]
+    workflowLangs: [WorkflowLang]
+    workflowRules: [WorkflowRule]
+}

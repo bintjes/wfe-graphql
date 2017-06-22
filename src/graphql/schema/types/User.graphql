@@ -1,0 +1,5 @@
+type Rule{
+    id: Int!
+    description: String
+    service_url: String
+}

@@ -1,0 +1,15 @@
+type Publication{
+    id: Int!
+    workflow_id: Int
+    status_id: Int
+    housenumber: String
+    date_creation: String
+    date_modified: String
+    user_id: Int
+    json: String
+    dalet_videopath: String
+    lng_id: Int
+    message: String
+    workflow: Workflow
+    publicationTasks: [PublicationTask]
+}

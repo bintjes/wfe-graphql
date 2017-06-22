@@ -1,0 +1,4 @@
+type TranscodingStatus{
+    id: Int!
+    label_status: String
+}

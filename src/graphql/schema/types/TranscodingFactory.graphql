@@ -1,0 +1,6 @@
+type TranscodingMachine{
+    id: Int!
+    name: String
+    slug: String
+    transcodingFactories: [TranscodingFactory]
+}
