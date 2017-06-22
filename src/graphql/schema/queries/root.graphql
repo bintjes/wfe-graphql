@@ -15,13 +15,39 @@ type WfeQuery {
     # Get workflow rules
     workflowRule(id:Int):WorkflowRule
     workflowRules:[WorkflowRule]
+    # Get workflow language(s)
+    workflowLang(id:Int):WorkflowLang
+    workflowLangs:[WorkflowLang]
+    # Get transcoding machine(s)
+    transcodingMachine(id:Int):TranscodingMachine
+    transcodingMachines:[TranscodingMachine]
+    # Get transcodingFactory-ies
+    transcodingFactory(id:Int):TranscodingFactory
+    transcodingFactories:[TranscodingFactory]
+    # Get transcodingJob(s)
+    transcodingJob(id:Int): TranscodingJob
+    transcodingJobs:[TranscodingJob]
+    # Get transcoding status
+    transcodingStatus(id:Int): TranscodingStatus
+    transcodingStatuses: [TranscodingStatus]
+    # get publicationStatus-es
+    publicationStatus(id:Int): PublicationStatus
+    publicationStatuses: [PublicationStatus]
+    # Get publication(s)
+    publication(id: Int): Publication
+    publications(id: Int): [Publication]
+    # Get publicationTask(s)
+    publicationTask(id:Int): PublicationTask
+    publicationTasks: [PublicationTask]
+    # Ger User(s)
+    user(id:Int): User
+    users:[User]
     # Get generic tasks
     task(id:Int):Task
     tasks: [Task]
     # Get generic rules
     rule(id:Int): Rule
     rules: [Rule]
-
     #Get language(s)
     language(id: Int!):Language
     languages:[Language]

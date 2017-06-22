@@ -1,12 +1,13 @@
-type TranscodingFactory{
+type TranscodingJob{
     id: Int!
-    name: String
-    slug: String
-    description: String
-    machine_id: Int
-    rename_mask: String
-    option_rename: Boolean
-    extension: String
-    default_schedule: String
-    transcodingMachine: TranscodingMachine
+    publication_task_id: Int!
+    transcoding_status_id: Int!
+    video_name: String
+    factory_id: Int
+    scheduled: String
+    uuid: String
+    submitted_at: String
+    video_duration: Int
+    transcodingFactory: TranscodingFactory
+    transcodingStatus: TranscodingStatus
 }

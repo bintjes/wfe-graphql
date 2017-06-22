@@ -1,4 +1,4 @@
-type TranscodingStatus{
+type PublicationStatus{
     id: Int!
-    label_status: String
+    description: String
 }

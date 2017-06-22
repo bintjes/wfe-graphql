@@ -1,6 +1,7 @@
-type WorkflowHn{
+type WorkflowLang{
     id: Int!
-    hn_type: String
-    label: Int
     workflow_id: Int
+    lng_id: Int
+    workflow: Workflow
+    language: Language
 }

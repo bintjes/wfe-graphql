@@ -1,20 +1,22 @@
 'use strict'
 
 const SQL = require('../../connectors/mysql')
-const { WorkflowGroup } = require('../../connectors/mysql').models
+const { TranscodingMachine } = require('../../connectors/mysql').models
 module.exports = {
     WfeQuery : {
-        workflowGroup(_, { id }) {
-            return WorkflowGroup.findByPrimary(id)
+        transcodingMachine(_, { id }) {
+            return TranscodingMachine.findByPrimary(id)
         },
-        workflowGroups(){
-            return WorkflowGroup.findAll()
+        transcodingMachines(){
+            return TranscodingMachine.findAll()
         },
     },
-    WorkflowGroup : {
-        workflows : (workflowGroupModel) => {
-                return workflowGroupModel.getWorkflows()
+    TranscodingMachine : {
+        transcodingFactories : (transcodingMachineModel) => {
+            if (transcodingMachineModel.transcodingFactories) {
+                return transcodingMachineModel.transcodingFactories
+            }
+            return transcodingMachineModel.getTranscodingFactories()
         }
     }
-  
 }

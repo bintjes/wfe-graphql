@@ -1,6 +1,12 @@
-type TranscodingMachine{
+type TranscodingFactory{
     id: Int!
     name: String
     slug: String
-    transcodingFactories: [TranscodingFactory]
+    description: String
+    machine_id: Int
+    rename_mask: String
+    option_rename: Boolean
+    extension: String
+    default_schedule: String
+    transcodingMachine: TranscodingMachine
 }

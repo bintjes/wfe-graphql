@@ -15,15 +15,17 @@ module.exports = {
         rule: (workflowRuleModel) => {
             if(workflowRuleModel.rule){
                 return workflowRuleModel.rule
-
             }
             return workflowRuleModel.getRule()
+        },
+        workflow: (workflowRuleModel) => {
+            if(workflowRuleModel.workflow){
+                return workflowRuleModel.workflow
+
+            }
+            return workflowRuleModel.getWorkflow()
 
         }
-
-
-
-
     }
   
 }

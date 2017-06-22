@@ -23,6 +23,24 @@ module.exports = {
                 return workflowModel.workflowTasks
             }
             return workflowModel.getWorkflowTasks()
+        },
+        workflowLangs: (workflowModel) => {
+            if (workflowModel.workflowLangs) {
+                return workflowModel.workflowLangs
+            }
+            return workflowModel.getWorkflowLangs()
+        },
+        workflowHn: (workflowModel) => {
+            if (workflowModel.workflowHns) {
+                return workflowModel.workflowHns
+            }
+            return workflowModel.getWorkflowHns()
+        },
+        workflowRules: (workflowModel) => {
+            if (workflowModel.workflowRuless) {
+                return workflowModel.workflowRules
+            }
+            return workflowModel.getWorkflowRules()
         }
     }
 

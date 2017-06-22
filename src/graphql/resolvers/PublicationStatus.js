@@ -1,14 +1,14 @@
 'use strict'
 
 const SQL = require('../../connectors/mysql')
-const { TranscodingStatus } = require('../../connectors/mysql').models
+const { PublicationStatus } = require('../../connectors/mysql').models
 module.exports = {
     WfeQuery : {
-        transcodingStatus(_, { id }) {
-            return TranscodingStatus.findById(id)
+        publicationStatus(_, { id }) {
+            return PublicationStatus.findById(id)
         },
-        transcodingStatuses(){
-            return TranscodingStatus.findAll()
+        publicationStatuses(){
+            return PublicationStatus.findAll()
         }
     }
 }

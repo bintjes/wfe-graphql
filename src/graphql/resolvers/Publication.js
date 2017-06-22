@@ -1,28 +1,47 @@
 'use strict'
 
 const SQL = require('../../connectors/mysql')
-const { TranscodingJob } = require('../../connectors/mysql').models
+const { Publication } = require('../../connectors/mysql').models
 module.exports = {
     WfeQuery : {
-        transcodingJob(_, { id }) {
-            return TranscodingJob.findById(id)
+        publication(_, { id }) {
+            return Publication.findById(id)
         },
-        transcodingJobs(){
-            return TranscodingJob.findAll()
+        publications(){
+            return Publication.findAll()
         },
     },
-    TranscodingJob : {
-        transcodingFactory : (transcodingJobModel) => {
-            if(transcodingJobModel.transcodingFactory){
-                return transcodingJobModel.transcodingFactory
+    Publication : {
+        workflow : (publicationModel) => {
+            if(publicationModel.workflow){
+                return publicationModel.workflow
             }
-            return transcodingJobModel.getTranscodingFactory()
+            return publicationModel.getWorkflow()
         },
-        transcodingStatus : (transcodingJobModel) => {
-            if(transcodingJobModel.transcodingStatus){
-                return transcodingJobModel.transcodingStatus
+        publicationTasks : (publicationModel) => {
+            if(publicationModel.publicationTasks){
+                return publicationModel.publicationTasks
             }
-            return transcodingJobModel.getTranscodingStatus()
+            return publicationModel.getPublicationTasks()
+
+        },
+        publicationStatus : (publicationModel) => {
+            if(publicationModel.publicationStatus){
+                return publicationModel.publicationStatus
+            }
+            return publicationModel.getPublicationStatus()
+        },
+        user: (publicationModel) => {
+            if(publicationModel.user){
+                return publicationModel.user
+            }
+            return publicationModel.getUser()
+        },
+        language:(publicationModel) => {
+            if(publicationModel.language){
+                return publicationModel.language
+            }
+            return publicationModel.getLanguage()
         }
     }
 }

@@ -1,37 +1,31 @@
 'use strict'
 
 const SQL = require('../../connectors/mysql')
-const { Publication } = require('../../connectors/mysql').models
+const { PublicationTask } = require('../../connectors/mysql').models
 module.exports = {
     WfeQuery : {
-        publication(_, { id }) {
-            return Publication.findById(id)
+        publicationTask(_, { id }) {
+            return PublicationTask.findById(id)
         },
-        publications(){
-            return Publication.findAll()
+        publicationTasks(){
+            return PublicationTask.findAll()
         },
     },
-    Publication : {
-        workflow : (publicationModel) => {
-            if(publicationModel.workflow){
-                return publicationModel.workflow
-            }
-            return publicationModel.getWorkflow()
-        },
-        publicationTasks : (publicationModel) => {
-            if(publicationModel.publicationTasks){
-                return publicationModel.publicationTasks
-            }
-            return publicationModel.getPublicationTasks()
+    PublicationTask : {
 
+        transcodingJob : (publicationTaskModel) => {
+            if(publicationTaskModel.transcodingJob){
+                return publicationTaskModel.transcodingJob
+            }
+            return publicationTaskModel.getTranscodingJob()
+        }
+        ,
+        publicationTaskStatus : (publicationTaskModel) => {
+            if(publicationTaskModel.publicationTaskStatus){
+                return publicationTaskModel.publicationTaskStatus
+            }
+            return publicationTaskModel.getPublicationStatus()
         }
 
-        /*,
-        publicationStatus : (publicationModel) => {
-            if(publicationModel.publicationStatus){
-                return publicationModel.publicationStatus
-            }
-            return publicationModel.getPublicationStatus()
-        }*/
     }
 }

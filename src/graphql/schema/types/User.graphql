@@ -1,5 +1,5 @@
-type Rule{
+type User{
     id: Int!
-    description: String
-    service_url: String
+    nom: String
+    prenom: String
 }

@@ -1,19 +1,28 @@
 'use strict'
 
 const SQL = require('../../connectors/mysql')
-const { TranscodingFactory } = require('../../connectors/mysql').models
+const { TranscodingJob } = require('../../connectors/mysql').models
 module.exports = {
     WfeQuery : {
-        transcodingFactory(_, { id }) {
-            return TranscodingFactory.findByPrimary(id)
+        transcodingJob(_, { id }) {
+            return TranscodingJob.findById(id)
         },
-        transcodingFactories(){
-            return TranscodingFactory.findAll()
+        transcodingJobs(){
+            return TranscodingJob.findAll()
         },
     },
-    TranscodingFactory : {
-        transcodingMachine : (transcodingFactoryModel) => {
-                return transcodingFactoryModel.getTranscodingMachine()
+    TranscodingJob : {
+        transcodingFactory : (transcodingJobModel) => {
+            if(transcodingJobModel.transcodingFactory){
+                return transcodingJobModel.transcodingFactory
+            }
+            return transcodingJobModel.getTranscodingFactory()
+        },
+        transcodingStatus : (transcodingJobModel) => {
+            if(transcodingJobModel.transcodingStatus){
+                return transcodingJobModel.transcodingStatus
+            }
+            return transcodingJobModel.getTranscodingStatus()
         }
     }
 }

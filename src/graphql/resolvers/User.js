@@ -1,14 +1,14 @@
 'use strict'
 
 const SQL = require('../../connectors/mysql')
-const { PublicationStatus } = require('../../connectors/mysql').models
+const { User } = require('../../connectors/mysql').models
 module.exports = {
     WfeQuery : {
-        publicationStatus(_, { id }) {
-            return PublicationStatus.findById(id)
+        user(_, { id }) {
+            return User.findById(id)
         },
-        publicationStatuses(){
-            return PublicationStatus.findAll()
+        users(){
+            return User.findAll()
         }
     }
 }

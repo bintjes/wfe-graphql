@@ -5,5 +5,7 @@ type Workflow{
     description: String
     workflowGroup: WorkflowGroup
     workflowTasks: [WorkflowTask!]
-    WorkflowHn: [WorkflowHn!]
+    workflowHn: [WorkflowHn!]
+    workflowLangs: [WorkflowLang]
+    workflowRules: [WorkflowRule]
 }

@@ -1,6 +1,6 @@
-type WorkflowGroup{
+type TranscodingMachine{
     id: Int!
     name: String
-    description: String
-    workflows: [Workflow]
+    slug: String
+    transcodingFactories: [TranscodingFactory]
 }

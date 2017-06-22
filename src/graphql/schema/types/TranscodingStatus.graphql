@@ -1,12 +1,4 @@
-type TranscodingJob{
+type TranscodingStatus{
     id: Int!
-    publication_task_id: Int!
-    transcoding_status_id: Int!
-    video_name: String
-    factory_id: Int
-    scheduled: String
-    uuid: String
-    submitted_at: String
-    video_duration: Int
-    transcodingFactory: TranscodingFactory
+    label_status: String
 }
