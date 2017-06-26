@@ -1,0 +1,11 @@
+type Pagination {
+    total: Int!
+    count: Int!
+    next: PaginationOutput
+    previous: PaginationOutput
+}
+
+type PaginationOutput {
+    limit: Int
+    offset: Int
+}

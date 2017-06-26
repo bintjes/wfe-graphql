@@ -1,0 +1,4 @@
+input OrderInput {
+    key: String!
+    direction: OrderDirection!
+}

@@ -1,0 +1,4 @@
+input QueryOptions {
+    pagination: PaginationInput
+    order: OrderInput
+}

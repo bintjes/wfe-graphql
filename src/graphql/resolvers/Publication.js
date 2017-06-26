@@ -1,14 +1,19 @@
 'use strict'
 
-const SQL = require('../../connectors/mysql')
 const { Publication } = require('../../connectors/mysql').models
+const { computePagination } = require('./helpers/pagination')
+const { prepareOptions } = require('./helpers/sequelize')
+
 module.exports = {
     WfeQuery : {
         publication(_, { id }) {
             return Publication.findById(id)
         },
-        publications(){
-            return Publication.findAll()
+        publications : (_,{options}) => {
+            const paginate = computePagination(options)
+            const query = Object.assign({}, prepareOptions(options))
+            return Publication.findAndCountAll(query)
+                .then(paginate)
         },
     },
     Publication : {

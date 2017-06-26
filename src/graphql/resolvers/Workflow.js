@@ -1,14 +1,19 @@
 'use strict'
 
-const SQL = require('../../connectors/mysql')
 const { Workflow } = require('../../connectors/mysql').models
+const { computePagination } = require('./helpers/pagination')
+const { prepareOptions } = require('./helpers/sequelize')
 module.exports = {
     WfeQuery : {
         workflow(_, { id }) {
             return Workflow.findById(id)
         },
-        workflows(){
-            return Workflow.findAll()
+        workflows : (_,{options}) => {
+            const paginate = computePagination(options)
+            const query = Object.assign({}, prepareOptions(options))
+
+            return Workflow.findAndCountAll(query)
+                .then(paginate)
         },
     },
     Workflow :{

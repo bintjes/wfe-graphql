@@ -1,0 +1,4 @@
+type WorkflowsResponse{
+    pagination: Pagination!
+    results: [Workflow]
+}

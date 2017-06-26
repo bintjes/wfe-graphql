@@ -2,7 +2,9 @@
 type WfeQuery {
     # Get  workflow(s)
     workflow(id: Int!):Workflow
-    workflows:[Workflow]
+    workflows(
+        # Pagination options
+        options: QueryOptions):WorkflowsResponse
     # Get workflow groups)
     workflowGroup(id: Int!):WorkflowGroup
     workflowGroups:[WorkflowGroup]
@@ -35,7 +37,10 @@ type WfeQuery {
     publicationStatuses: [PublicationStatus]
     # Get publication(s)
     publication(id: Int): Publication
-    publications(id: Int): [Publication]
+    publications(
+        # Pagination options
+        options: QueryOptions):PublicationsResponse
+
     # Get publicationTask(s)
     publicationTask(id:Int): PublicationTask
     publicationTasks: [PublicationTask]
