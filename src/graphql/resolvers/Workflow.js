@@ -1,6 +1,7 @@
 'use strict'
 
-const { Workflow } = require('../../connectors/mysql').models
+const Sequelize = require('../../connectors/mysql')
+const { Workflow } = Sequelize.models
 const { computePagination } = require('./helpers/pagination')
 const { prepareOptions } = require('./helpers/sequelize')
 module.exports = {
@@ -47,6 +48,19 @@ module.exports = {
             }
             return workflowModel.getWorkflowRules()
         }
+    },
+    
+    WfeMutation : {
+        /*{"query":"mutation { updateVideoYoutubeId(houseNumber: \"'.$houseNumbervideo.'\", id: \"'.$youtubeid.'\")}"} */
+/*
+        upsertWorkflow : (_, { Workflow })=> {
+            return Sequelize.transaction((transaction) => {
+                return upsertWorkflow(Workflow, { transaction })
+            })
+            
+        }
+  */
+        
     }
 
   

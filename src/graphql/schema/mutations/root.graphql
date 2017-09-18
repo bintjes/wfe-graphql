@@ -1,0 +1,16 @@
+# Mutations
+type WfeMutation {
+    # upsert a workflow
+    # Insert a workflow or updates its data if the entry already exists
+    # TODO
+    #upsertWorkflow(workflow: WorkflowInput!): Workflow
+
+    # Insert a WorkflowRule
+    # ?addRule(description: String, service_url: String): Rule
+
+
+    # upsert a Rule
+    upsertRule( rule: RuleInput ):Rule
+    # upsert a Task
+    upsertTask(task: TaskInput):Task
+}

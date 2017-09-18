@@ -8,6 +8,7 @@ const resolvers = require('../resolvers')
 const SchemaDef = `
     schema {
         query: WfeQuery
+        mutation: WfeMutation
     }
 `
 

@@ -1,5 +1,5 @@
-type Rule{
-    id: Int!
+input RuleInput {
+    id: Int
     description: String
     service_url: String!
 }
