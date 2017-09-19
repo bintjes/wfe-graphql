@@ -1,10 +1,10 @@
-type Language {
+input LanguageInput {
     id: Int
     alias: String
     fullname: String
     rtl: Boolean
     collate_locale: String
-    mixnews_iid: Int!
+    mixnews_iid: Int
     lng_dalet: String
     lng_iso: String
     lng_dalet_long: String

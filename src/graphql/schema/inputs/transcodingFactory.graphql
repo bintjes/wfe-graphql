@@ -1,0 +1,11 @@
+input TranscodingFactoryInput{
+    id: Int!
+    name: String
+    slug: String
+    description: String
+    machine_id: Int
+    rename_mask: String
+    option_rename: Boolean
+    extension: String
+    default_schedule: String
+}

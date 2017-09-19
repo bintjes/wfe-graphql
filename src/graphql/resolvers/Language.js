@@ -1,6 +1,6 @@
 'use strict'
-
-const { Language } = require('../../connectors/mysql').models
+const Sequelize = require('../../connectors/mysql')
+const { Language } = Sequelize.models
 const { computePagination } = require('./helpers/pagination')
 const { prepareOptions } = require('./helpers/sequelize')
 
@@ -13,6 +13,17 @@ module.exports = {
         languages(){
             return Language.findAll()
         },
+
+    },
+    WfeMutation: {
+        upsertLanguage : (_, { lang })=> {
+            return Sequelize.transaction((transaction) => {
+                const { id, alias, fullname, rtl, collate_locale, lng_dalet, mixnews_iid, lng_iso, lng_dalet_long, dalet_station_id } = lang
+                const options = { transaction }
+                return Language.upsertAndFetch({ id, alias, fullname, rtl, collate_locale, lng_dalet, mixnews_iid, lng_iso, lng_dalet_long, dalet_station_id }, options)
+                    .then((langModel)=>langModel)
+            })
+        }
 
     }
 

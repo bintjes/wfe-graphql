@@ -13,4 +13,8 @@ type WfeMutation {
     upsertRule( rule: RuleInput ):Rule
     # upsert a Task
     upsertTask(task: TaskInput):Task
+    #upsert a Language
+    upsertLanguage(lang: LanguageInput):Language
+    #upsert a factory
+    upsertTranscodingFactory(factory:TranscodingFactoryInput):TranscodingFactory
 }
